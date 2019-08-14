@@ -25,33 +25,33 @@
     </frontend>
     <admin>
         <routers>
-			<abtester>
-				<use>admin</use>
-				<args>
-					<module>Wingify_Abtester</module>
-					<frontName>abtester</frontName>
-				</args>
-			</abtester>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <abtester before="Mage_Adminhtml">Wingify_Abtester_Adminhtml</abtester>
+                    </modules>
+                </args>
+            </adminhtml>
         </routers>
     </admin>
     <adminhtml>
-		<acl>
-			<resources>
+        <acl>
+            <resources>
                 <all>
-					<title>Allow Everything</title>
-				</all>
-				<admin>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
                     <children>
                         <abtester>
-							<title>A/B Testing using Visual Website Optimizer</title>
-							<children>
-								<config translate="title">
-									<title>Configuration</title>
-									<sort_order>2</sort_order>
-								</config>							
-							</children>	
-						</abtester>
-						<system>
+                            <title>A/B Testing using Visual Website Optimizer</title>
+                            <children>
+                                <config translate="title">
+                                    <title>Configuration</title>
+                                    <sort_order>2</sort_order>
+                                </config>
+                            </children>
+                        </abtester>
+                        <system>
                             <children>
                                 <config>
                                     <children>
@@ -65,15 +65,15 @@
                     </children>
                 </admin>
             </resources>
-		</acl>
-		<layout>
-			<updates>
-				<abtester>
-					<file>abtester.xml</file>
-				</abtester>
-			</updates>
-		</layout>
-    </adminhtml>   
+        </acl>
+        <layout>
+            <updates>
+                <abtester>
+                    <file>abtester.xml</file>
+                </abtester>
+            </updates>
+        </layout>
+    </adminhtml>
     <global>
         <models>
             <abtester>
