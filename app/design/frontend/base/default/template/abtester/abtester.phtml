@@ -4,6 +4,67 @@ if(Mage::getStoreConfig('abtester/general/enable') == 1):
 	if($account_id != '' && is_numeric($account_id)):
 		$account_id =  Mage::getStoreConfig('abtester/general/accountid');
 ?>
+<?php
+if($this->getRequest()->getModuleName()=='catalog' && $this->getRequest()->getControllerName()=='product'){
+	$variables = array();	
+	
+	$storeId = Mage::app()->getStore()->getStoreId();
+	$product_id = Mage::registry('current_product')->getId();
+	$product = Mage::getModel('catalog/product')->getCollection()->addFieldToFilter('entity_id',$product_id);
+	
+	//$productResourceModel = Mage::getResourceModel('catalog/product');
+	$productModel = Mage::getModel('catalog/product')->load($product_id);
+
+	$variables['page_type'] = 'product';
+	$variables['product_type'] = $productModel->getTypeId();
+	$variables['product_sku'] = $productModel->getSku();
+	$variables['product_name'] = $productModel->getName();
+	$variables['product_price'] = $productModel->getFinalPrice();
+	$variables['category_name'] = Mage::getSingleton('catalog/layer')->getCurrentCategory()->getName();
+
+    $attributeHolder = array('type','sku','name','price');
+
+    for($i=1;$i<11;$i++)
+    {
+
+        if(Mage::getStoreConfigFlag('abtester/custom/customvar'.$i))
+        {
+            $attribute_code = Mage::getStoreConfig('abtester/custom/customvar'.$i);
+            error_log($i . Mage::getStoreConfigFlag('abtester/custom/customvar'.$i) . $attribute_code);
+
+            if(!in_array($attribute_code,$attributeHolder))
+            {
+                $attributeObj = Mage::getModel('eav/config')->getAttribute('catalog_product', $attribute_code);
+                $id = $attributeObj->getId();
+                $attribute = Mage::getModel('eav/entity_attribute')->load($id);
+                $atrr_type = $attribute->getFrontendInput();
+                array_push($attributeHolder,$attribute_code);
+                $attribute_option_id = Mage::getResourceModel('catalog/product')->getAttributeRawValue($product_id, $attribute_code, $storeId);
+                if($atrr_type=='select')
+                {
+                    $productModel->setData($attribute_code,$attribute_option_id);
+                    $variables[$attribute_code] =
+                            $productModel->getAttributeText($attribute_code);
+                }
+                else
+                {
+                    $variables[$attribute_code] = $attribute_option_id;
+                }
+            }
+        }
+    }
+		
+if(!empty($variables))
+{
+?>
+<script type="text/javascript" language="javascript">
+var _vwo_custom_magento = <?php echo json_encode($variables); ?>;
+</script>
+<?php
+}
+		
+}
+?>
 <!-- Start Visual Website Optimizer Asynchronous Code -->
 <?php
      if (Mage::getStoreConfig('abtester/general/detailedurl')):

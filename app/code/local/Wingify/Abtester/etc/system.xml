@@ -20,7 +20,7 @@
 					<comment><![CDATA[<br />
 						<div class="box">
 							<p>
-								<a href="http://visualwebsiteoptimizer.com">Visual Website Optimizer</a> is an A/B testing tool for your Magento website. To use this extension, simply enter your Visual Website Optimizer account ID and enable it (account ID can be found after logging into your VWO account). This plugin uses <a href="http://visualwebsiteoptimizer.com/split-testing-blog/asynchronous-code/" target="_blank">asynchronous version of code snippet</a> which ensures much faster loading of your website.
+								<a href="https://vwo.com">Visual Website Optimizer</a> is an A/B testing tool for your Magento website. To use this extension, simply enter your Visual Website Optimizer account ID and enable it (account ID can be found after logging into your VWO account). This plugin uses <a href="https://vwo.com/blog/asynchronous-code/" target="_blank">asynchronous version of code snippet</a> which ensures much faster loading of your website.
 							</p>
 						</div>
 						]]>
@@ -60,6 +60,140 @@
 
                     </fields>
 				</general>
+				
+				<custom translate="label comment">
+				
+				<comment><![CDATA[<br />
+                        <div class="box">
+                            <p>
+                                Select the product attributes you want to target. These will be included in your page as javascript variables. You can target the values of these variables using VWO's custom targeting option of 'javascript variables'.
+                            </p>
+							<p>
+                                For ex: If you have a product attribute called 'Color' in Magento you can then select it below.
+                            </p>
+							<p>
+                                In VWO you can use Custom Targeting with Javascript Variable to target product pages with a particular value for the variable 'Colour'. For instance you can target all product pages where the product's Colour attribute is Red.
+                            </p>
+                        </div>
+                        ]]>
+
+                    </comment>
+				
+				
+					  <label>Include product attributes in page</label>
+					  <frontend_type>text</frontend_type>
+					  <sort_order>12</sort_order>
+					  <show_in_default>1</show_in_default>
+					  <show_in_website>1</show_in_website>
+					  <show_in_store>1</show_in_store>
+				       <fields>
+                          <customvar1 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar1>
+                          <customvar2 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar2>
+                          <customvar3 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar3>
+						  <customvar4 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar4>
+                          <customvar5 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar5>
+                          <customvar6 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar6>
+						  <customvar7 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar7>
+                          <customvar8 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar8>
+                          <customvar9 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar9>
+						  
+						  <customvar10 translate="label">
+                            <label>Include product attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>Wingify_Adminhtml_Model_System_Config_Source_Attributes</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<comment>Please do not select same attribute twice.</comment>
+                          </customvar10>
+						  
+					   </fields>
+					   </custom>
+				
+				
+				
                 <revenue_options translate="label comment">
                     <comment><![CDATA[<br />
                         <div class="box">
