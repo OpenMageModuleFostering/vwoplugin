@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+		<reference name="head">
+			<block type="core/template" name="abtester" after="-" template="abtester/abtester.phtml" />
+		</reference>
+	</default>
+<!--
+Onepage checkout success
+-->
+    <checkout_onepage_success translate="label">
+        <label>One Page Checkout Success</label>
+		<reference name="head">
+			<block type="abtester/onepage_success" name="abtester" after="-" template="abtester/Success.phtml" />
+		</reference>
+    </checkout_onepage_success>
+<!--
+Multi address shipping checkout success
+-->
+
+    <checkout_multishipping_success translate="label">
+        <label>Multishipping Checkout Success</label>
+        <reference name="head">
+            <block type="abtester/multishipping_success" name="abtester" after="-" template="abtester/Success.phtml"/>
+        </reference>
+    </checkout_multishipping_success>
+
+</layout> 
