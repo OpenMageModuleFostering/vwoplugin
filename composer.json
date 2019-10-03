@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/VWOPlugin",
+    "name": "OpenMageModuleFostering\/VWOPlugin",
     "type": "magento-module",
     "license": "MITL",
     "homepage": "",
     "description": "Integrate VWO conversion optimization platform with your Magento store without hassle.",
     "authors": [
-    {
-        "name": "Wingify Integrations",
-        "email": "integrations@wingify.com"
-    }
-],
+        {
+            "name": "Wingify Integrations",
+            "email": "integrations@wingify.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
